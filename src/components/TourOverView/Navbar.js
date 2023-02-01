@@ -1,6 +1,6 @@
 import React from "react";
-import logo from "../images/logo-green-small-2x.png";
-import { navLinks, socialLinks } from "../data/data";
+import logo from "../../images/logo-green-small-2x.png";
+import { navLinks, socialLinks } from "../../data/data";
 
 const Navbar = () => {
   return (

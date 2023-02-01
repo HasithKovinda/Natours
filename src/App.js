@@ -1,18 +1,21 @@
-import About from "./components/About";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
-import Services from "./components/Services";
-import Tours from "./components/Tours";
+import Account from "./components/Account/Account";
+import About from "./components/TourOverView/About";
+import Footer from "./components/TourOverView/Footer";
+import Hero from "./components/TourOverView/Hero";
+import Navbar from "./components/TourOverView/Navbar";
+import Services from "./components/TourOverView/Services";
+import Tours from "./components/TourOverView/Tours";
 
 function App() {
   return (
     <>
       <Navbar />
-      <Hero />
+      <Account />
+      {/* <Hero />
       <About />
       <Services />
       <Tours />
+      <Footer /> */}
       <Footer />
     </>
   );
