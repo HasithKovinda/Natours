@@ -11,6 +11,8 @@
   --clr-primary-dark: #28b485;
   --clr-font: #777;
   --clr-white: #fff;
+  --clr-background: #f7f7f7;
+  --clr-dark: #444;
   --ff-primary: "Fira Sans", sans-serif;
   --animation: all 0.3s linear;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -82,6 +84,10 @@ p {
   border: 2px solid transparent;
 }
 
+.space {
+  padding: 10rem 0;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                   Styles                                   */
 /* -------------------------------------------------------------------------- */
@@ -91,6 +97,7 @@ p {
 .nav {
   padding: 2rem 0;
   box-shadow: var(--light-shadow);
+  background: var(--clr-background);
 }
 
 .nav-logo {
@@ -142,7 +149,7 @@ p {
 /* -------------------------------------------------------------------------- */
 
 .hero-section {
-  min-height: 90vh;
+  min-height: calc(100vh - 8rem);
   display: grid;
   place-items: center;
   background: linear-gradient(
@@ -184,4 +191,280 @@ p {
   transform: scale(1.1);
   background: transparent;
   border: 2px solid #fff;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                About Section                               */
+/* -------------------------------------------------------------------------- */
+
+.section-about {
+  text-align: center;
+  /* background: var(--clr-background); */
+}
+
+.main-heading {
+  text-transform: capitalize;
+  display: inline-block;
+  background: linear-gradient(
+    to right bottom,
+    rgba(126, 213, 111),
+    rgba(40, 180, 133)
+  );
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 3.5rem;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* align-items: center; */
+  column-gap: 5rem;
+  padding: 3rem 0;
+}
+
+.about-img {
+  height: 35rem;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.section-info {
+  text-align: left;
+}
+
+.section-info h3 {
+  font-size: 2.3rem;
+  margin-bottom: 2rem;
+}
+
+.section-info p {
+  margin-bottom: 3rem;
+}
+
+.about-btn {
+  color: var(--clr-primary-light);
+  background: transparent;
+  border: transparent;
+  letter-spacing: 1px;
+  font-size: 2.1rem;
+  cursor: pointer;
+  transition: var(--animation);
+}
+
+.about-btn:hover {
+  background: var(--clr-primary-dark);
+  color: var(--clr-white);
+  /* border-radius: 10rem; */
+  padding: 0.5rem 1rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   Services                                  */
+/* -------------------------------------------------------------------------- */
+
+.section-service {
+  background: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.642),
+      rgba(40, 180, 133, 0.673)
+    ),
+    url("./images/service-img.jpg") center/cover no-repeat;
+  margin-bottom: 10rem;
+  transform: skewY(-5deg);
+  padding: 20rem;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 2rem;
+  transform: skewY(5deg);
+}
+
+.service {
+  background: var(--clr-background);
+  padding: 4rem 4rem;
+  text-align: center;
+  box-shadow: var(--light-shadow);
+  transition: var(--animation);
+  border-radius: 2rem;
+}
+
+.service:hover {
+  transform: translateY(-2rem);
+}
+
+.service-icon {
+  font-size: 6rem;
+  margin-bottom: 2rem;
+  color: var(--clr-primary-light);
+}
+
+.service h3 {
+  font-size: 1.8rem;
+  letter-spacing: 0.8px;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.service p {
+  font-size: 1.6rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                Tours Section                               */
+/* -------------------------------------------------------------------------- */
+
+.tours {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 4rem;
+  row-gap: 4rem;
+}
+
+.tour-section {
+  text-align: center;
+}
+
+.tour-img {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.single-tour {
+  position: relative;
+  box-shadow: var(--light-shadow);
+  display: grid;
+  grid-template-rows: 23rem auto 1fr;
+}
+
+.tour-heading {
+  font-size: 2.8rem;
+  letter-spacing: 2px;
+  color: var(--clr-white);
+  text-transform: uppercase;
+  text-align: right;
+  position: absolute;
+  top: 12rem;
+  right: 2rem;
+  width: 75%;
+}
+
+.tour-heading-span {
+  background: linear-gradient(
+    to right bottom,
+    rgba(126, 213, 111, 0.8),
+    rgba(40, 180, 133, 0.8)
+  );
+  padding: 1rem 1.5rem;
+  box-decoration-break: clone;
+}
+
+.tour-info {
+  margin-top: 2rem;
+  text-align: left;
+  padding: 2rem 4rem;
+}
+
+.tour-info h4 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.tour-info h4 span {
+  margin-left: 0.5rem;
+}
+.tour-info p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.tour-icon {
+  font-size: 2.4rem;
+  color: var(--clr-primary-light);
+}
+
+.tour-card {
+  display: flex;
+  align-items: center;
+}
+
+.tour-card p {
+  margin-bottom: 0;
+  margin-left: 1.5rem;
+}
+
+.tour-extra {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 3rem;
+}
+
+.tour-footer {
+  padding: 2rem 4rem 2rem 4rem;
+  background: var(--clr-background);
+  text-align: left;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+.price {
+  font-size: 1.5rem;
+}
+
+.tour-footer-btn {
+  border: transparent;
+  background: var(--clr-primary-medium);
+  color: var(--clr-white);
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  transition: var(--animation);
+  border-radius: 1rem;
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+.tour-footer-btn:hover {
+  transform: scale(1.1);
+  box-shadow: var(--light-shadow);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               Footer Section                               */
+/* -------------------------------------------------------------------------- */
+
+.footer {
+  background: var(--clr-dark);
+  padding: 5rem 0;
+}
+
+.footer-links,
+.footer-social-links {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.footer-link {
+  color: var(--clr-white);
+  margin-left: 1.5rem;
+}
+
+/* .footer-social-links {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+} */
+
+.footer-social-links li {
+  margin-left: 1.5rem;
+}
+
+.footer-text {
+  color: var(--clr-white);
+  text-align: center;
 }
