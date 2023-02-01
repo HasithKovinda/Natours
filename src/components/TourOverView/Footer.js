@@ -1,5 +1,5 @@
 import React from "react";
-import { navLinks, socialLinks } from "../data/data";
+import { navLinks, socialLinks } from "../../data/data";
 
 const Footer = () => {
   return (

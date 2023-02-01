@@ -1,5 +1,5 @@
 import React from "react";
-import { tours } from "../data/data";
+import { tours } from "../../data/data";
 import { FiMapPin, FiCalendar, FiFlag, FiUser } from "react-icons/fi";
 const Tours = () => {
   return (
