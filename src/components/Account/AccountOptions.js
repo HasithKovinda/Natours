@@ -2,7 +2,7 @@ import React from "react";
 import AccountManage from "./AccountManage";
 import Settings from "./Settings";
 
-const Account = () => {
+const AccountOptions = () => {
   return (
     <main className="main account-center">
       <Settings />
@@ -11,4 +11,4 @@ const Account = () => {
   );
 };
 
-export default Account;
+export default AccountOptions;

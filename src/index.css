@@ -39,7 +39,7 @@ html {
 
 body {
   font-family: var(--ff-primary);
-  line-height: 1.6;
+  line-height: 1.4;
   color: var(--clr-font);
 }
 
@@ -53,6 +53,7 @@ ul {
 }
 a {
   text-decoration: none;
+  line-height: 0;
 }
 
 h1 {
@@ -67,10 +68,15 @@ p {
   font-size: 1.8rem;
 }
 
-.section-center {
+.section-center,
+.nav-center {
   max-width: 1170px;
   margin: 0 auto;
   width: 100%;
+}
+
+.nav-center {
+  max-width: 80vw;
 }
 
 .btn {
@@ -106,9 +112,17 @@ p {
 
 .nav-bar {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr auto auto;
+  justify-content: space-between;
   align-items: center;
   column-gap: 4rem;
+}
+
+.nav-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-self: end;
+  column-gap: 2rem;
 }
 
 .nav-link {
@@ -122,11 +136,25 @@ p {
   color: var(--clr-primary-medium);
 }
 
-.nav-links {
+.signup-links {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-self: end;
+  grid-template-columns: repeat(2, 1fr);
   column-gap: 2rem;
+}
+
+.signup-link {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: var(--clr-font);
+  transition: var(--animation);
+  border: 2px solid var(--clr-dark);
+  border-radius: 1rem;
+  padding: 0.8rem 1.5rem;
+}
+
+.signup-links:hover {
+  color: var(--clr-white);
+  background: var(--clr-primary-light);
 }
 
 .social-links {
@@ -135,13 +163,15 @@ p {
   column-gap: 2rem;
 }
 
-.social-icon {
+.social-link {
+  align-items: center;
   font-size: 2.5rem;
   color: var(--clr-primary-light);
+  transition: var(--animation);
 }
 
-.social-icon:hover {
-  color: var(--clr-primary-dark);
+.social-link:hover {
+  color: var(--clr-primary-medium);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -337,7 +367,7 @@ p {
   position: relative;
   box-shadow: var(--light-shadow);
   display: grid;
-  grid-template-rows: 23rem auto 1fr;
+  grid-template-rows: 23rem 1fr auto;
 }
 
 .tour-heading {
@@ -394,7 +424,7 @@ p {
 
 .tour-card p {
   margin-bottom: 0;
-  margin-left: 1.5rem;
+  margin-left: 0.8rem;
 }
 
 .tour-extra {
@@ -651,4 +681,93 @@ input[type="file"] {
 .submit-btn:hover {
   transform: scale(1.1);
   box-shadow: var(--light-shadow);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               Login Section                               */
+/* -------------------------------------------------------------------------- */
+
+.login {
+  min-height: calc(100vh - 320.8);
+}
+
+.auth-from {
+  background: var(--clr-white);
+  width: 30vw;
+  box-shadow: var(--light-shadow);
+  margin: 10rem auto;
+  padding: 3rem 4rem;
+}
+
+.login-group {
+  text-align: left;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              Register Section                              */
+/* -------------------------------------------------------------------------- */
+
+.register {
+  min-height: calc(100vh - 320.8);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                       Tour Details Page Hero Section                       */
+/* -------------------------------------------------------------------------- */
+
+.details-hero {
+  min-height: 70vh;
+  clip-path: polygon(0 0, 100% 0, 100% 78%, 0 100%);
+  margin-bottom: 10rem;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+}
+
+.details-hero-heading {
+  font-size: 6rem;
+  text-transform: uppercase;
+  color: var(--clr-white);
+  letter-spacing: 2px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.details-hero-info {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.details-hero-heading-span {
+  background: linear-gradient(
+    to right bottom,
+    rgba(126, 213, 111, 0.8),
+    rgba(40, 180, 133, 0.8)
+  );
+  box-decoration-break: clone;
+  padding: 2rem 2rem;
+}
+
+.details-hero-mini-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+}
+
+.details-hero-icon-container {
+  display: flex;
+  align-items: center;
+  margin-right: 3rem;
+}
+
+.details-hero-icon,
+.details-hero-icon-container p {
+  font-size: 2rem;
+  color: var(--clr-white);
+}
+
+.details-hero-icon {
+  margin-right: 1rem;
 }

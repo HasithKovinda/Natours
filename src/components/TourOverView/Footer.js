@@ -19,7 +19,7 @@ const Footer = () => {
         {socialLinks.map((social) => {
           return (
             <li key={social.id}>
-              <a href="#t" className="social-icon">
+              <a href="#t" className="social-link">
                 <social.value />
               </a>
             </li>

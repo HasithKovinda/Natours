@@ -1,7 +1,20 @@
-import React from "react";
-import { tours } from "../../data/data";
+import React, { useEffect, useState } from "react";
 import { FiMapPin, FiCalendar, FiFlag, FiUser } from "react-icons/fi";
+import { Link } from "react-router-dom";
+import customFetch from "../../utils/axios";
+
 const Tours = () => {
+  useEffect(() => {
+    getAllTour();
+  }, []);
+  const [tours, setTours] = useState([]);
+
+  const getAllTour = async () => {
+    console.log("called");
+    const res = await customFetch.get("/tours");
+    setTours(res.data.data.docs);
+  };
+
   return (
     <section className="section-tours space section-center">
       <div className="tour-section">
@@ -35,20 +48,25 @@ const Tours = () => {
                   <div className="tour-extra">
                     <div className="tour-card">
                       <FiMapPin className="tour-icon" />
-                      <p>Miami, USA</p>
+                      <p>{tour.startLocation.description}</p>
                     </div>
                     <div className="tour-card">
                       {" "}
                       <FiCalendar className="tour-icon" />
-                      <p>Miami, USA</p>
+                      <p>
+                        {new Date(tour.startDates[0]).toLocaleDateString(
+                          "en-us",
+                          { year: "numeric", month: "long" }
+                        )}
+                      </p>
                     </div>
                     <div className="tour-card">
                       <FiFlag className="tour-icon" />
-                      <p>Miami, USA</p>
+                      <p>{`${tour.locations.length} stops`}</p>
                     </div>
                     <div className="tour-card">
                       <FiUser className="tour-icon" />
-                      <p>Miami, USA</p>
+                      <p>{`${tour.maxGroupSize} people`}</p>
                     </div>
                   </div>
                 </div>
@@ -62,7 +80,9 @@ const Tours = () => {
                       <span>rating({tour.ratingsQuantity})</span>{" "}
                     </h5>
                   </div>
-                  <button className="tour-footer-btn">Details</button>
+                  <Link to={`/tour/${tour._id}`}>
+                    <button className="tour-footer-btn">Details</button>
+                  </Link>
                 </div>
               </article>
             );
