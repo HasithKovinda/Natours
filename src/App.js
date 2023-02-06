@@ -1,23 +1,22 @@
-import Account from "./components/Account/Account";
-import About from "./components/TourOverView/About";
-import Footer from "./components/TourOverView/Footer";
-import Hero from "./components/TourOverView/Hero";
-import Navbar from "./components/TourOverView/Navbar";
-import Services from "./components/TourOverView/Services";
-import Tours from "./components/TourOverView/Tours";
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Account, Login, Home, Signup, SharedLayout, Tour } from "./pages";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
-    <>
-      <Navbar />
-      <Account />
-      {/* <Hero />
-      <About />
-      <Services />
-      <Tours />
-      <Footer /> */}
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Home />} />
+          <Route path="login" element={<Login />} className="login" />
+          <Route path="signup" element={<Signup />} />
+          <Route path="account" element={<Account />} />
+          <Route path="tour/:tourId" element={<Tour />} />
+          {/* singel tour route need to be implemented */}
+        </Route>
+      </Routes>
+      <ToastContainer style={{ fontSize: "20px" }} />
+    </BrowserRouter>
   );
 }
 
