@@ -716,9 +716,8 @@ input[type="file"] {
 /* -------------------------------------------------------------------------- */
 
 .details-hero {
-  min-height: 70vh;
-  clip-path: polygon(0 0, 100% 0, 100% 78%, 0 100%);
-  margin-bottom: 10rem;
+  min-height: 80vh;
+  clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%);
   display: grid;
   justify-content: center;
   justify-items: center;
@@ -770,4 +769,114 @@ input[type="file"] {
 
 .details-hero-icon {
   margin-right: 1rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                       Tour Details Page About Section                       */
+/* -------------------------------------------------------------------------- */
+
+.tour-details-section {
+  margin-top: -15vh;
+}
+
+.tour-details-about {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  /* align-items: center; */
+  background: var(--clr-background);
+}
+
+.quick-info {
+  justify-self: center;
+  display: grid;
+  grid-template-columns: auto repeat(2, 1fr);
+  align-items: center;
+  text-align: center;
+  column-gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.guide-info,
+.tour-details-info {
+  padding: 25rem 0;
+}
+
+.guide-info h3,
+.tour-details-info h3 {
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+}
+
+.quick-icon {
+  color: var(--clr-primary-light);
+  font-size: 2rem;
+}
+
+.quick-info p {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.quick-info p,
+.quick-info span {
+  justify-self: start;
+}
+
+.quick-info span {
+  font-size: 1.5rem;
+}
+
+.quick-info img {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+}
+
+.guide-section {
+  margin-top: 5rem;
+}
+
+.tour-details-info {
+  background: var(--clr-white);
+  text-align: center;
+}
+
+.tour-extra-info {
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.tour-extra-info p {
+  margin-bottom: 3rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               Gallery Section                              */
+/* -------------------------------------------------------------------------- */
+
+.gallery {
+  min-height: 50vh;
+  /* background: linear-gradient(
+    to right bottom,
+    rgba(126, 213, 111, 0.642),
+    rgba(40, 180, 133, 0.673)
+  ); */
+  transform: skewY(-6deg);
+}
+
+.tour-images {
+  height: 100%;
+  /* object-fit: cover; */
+}
+
+.gallery-section {
+  margin-top: -8rem;
+}
+
+.gallery-section {
+  display: flex;
 }

@@ -1,24 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { AboutTD } from "../components/TourDetails/AboutTD";
 import Hero from "../components/TourDetails/Hero";
-import customFetch from "./../utils/axios";
+import { getSingleTour } from "../features/tour/tourSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { Gallery } from "../components/TourDetails/Gallery";
 
 const Tour = () => {
   const { tourId } = useParams();
-  const [tour, setTour] = useState({});
-  const getSingleTour = async () => {
-    console.log("called");
-    const res = await customFetch.get(`/tours/${tourId}`);
-    setTour(res.data.data);
-    const { data } = res.data.data;
-    setTour(data);
-  };
+  const dispatch = useDispatch();
+  const { isLoading, tour } = useSelector((store) => store.tour);
+
   useEffect(() => {
-    getSingleTour();
-  }, []);
+    dispatch(getSingleTour(tourId));
+  }, [dispatch, tourId]);
+
+  if (isLoading) return <h1>Lodging.....</h1>;
+
   return (
     <>
       <Hero {...tour} />
+      <AboutTD {...tour} />
+      <Gallery {...tour} />
     </>
   );
 };
