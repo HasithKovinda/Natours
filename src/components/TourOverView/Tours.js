@@ -10,7 +10,6 @@ const Tours = () => {
   const [tours, setTours] = useState([]);
 
   const getAllTour = async () => {
-    console.log("called");
     const res = await customFetch.get("/tours");
     setTours(res.data.data.docs);
   };

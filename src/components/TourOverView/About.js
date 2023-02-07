@@ -1,7 +1,7 @@
 import React from "react";
 import aboutImg from "../../images/about-img.jpg";
 
-const About = () => {
+const AboutTD = () => {
   return (
     <section className="section-about section-center space">
       <h1 className="main-heading">EXCITING TOURS FOR ADVENTUROUS PEOPLE</h1>
@@ -28,4 +28,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutTD;
