@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FiMapPin, FiCalendar, FiFlag, FiUser } from "react-icons/fi";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import customFetch from "../../utils/axios";
 
@@ -8,6 +9,7 @@ const Tours = () => {
     getAllTour();
   }, []);
   const [tours, setTours] = useState([]);
+  const dispatch = useDispatch();
 
   const getAllTour = async () => {
     const res = await customFetch.get("/tours");

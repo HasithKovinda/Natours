@@ -11,7 +11,7 @@ export const getSingleTour = createAsyncThunk(
   "tour/ getSingleTour",
   async (tourId, thunkAPI) => {
     try {
-      console.log("sfsdfd");
+      console.log(tourId);
       const res = await customFetch.get(`/tours/${tourId}`);
       return res.data.data;
     } catch (error) {

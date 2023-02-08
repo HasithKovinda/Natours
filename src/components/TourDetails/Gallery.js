@@ -1,12 +1,11 @@
 import React from "react";
 
 export const Gallery = ({ images }) => {
-  console.log(images);
   return (
     <section className=" nav-center gallery-section gallery">
-      {images.map((img) => {
+      {images?.map((img, index) => {
         return (
-          <article>
+          <article key={index}>
             <img src={img} alt="img" className="tour-images" />
           </article>
         );

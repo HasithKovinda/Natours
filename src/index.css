@@ -152,7 +152,7 @@ p {
   padding: 0.8rem 1.5rem;
 }
 
-.signup-links:hover {
+.signup-link:hover {
   color: var(--clr-white);
   background: var(--clr-primary-light);
 }
@@ -693,10 +693,10 @@ input[type="file"] {
 
 .auth-from {
   background: var(--clr-white);
-  width: 30vw;
+  width: 40vw;
   box-shadow: var(--light-shadow);
   margin: 10rem auto;
-  padding: 3rem 4rem;
+  padding: 3rem 8rem;
 }
 
 .login-group {
