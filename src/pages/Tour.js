@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Gallery } from "../components/TourDetails/Gallery";
 import About from "../components/TourDetails/About";
 import { Location } from "../components/TourDetails/Location";
+import Review from "../components/TourDetails/Review";
+import BookTour from "../components/TourDetails/BookTour";
 
 const Tour = () => {
   const { tourId } = useParams();
@@ -21,7 +23,7 @@ const Tour = () => {
   /*             useLayoutEffect hook run before the useEffect hook             */
   /* -------------------------------------------------------------------------- */
 
-  if (isLoading) return <h1>Lodging.....</h1>;
+  if (isLoading) return;
 
   return (
     <>
@@ -29,6 +31,8 @@ const Tour = () => {
       <About {...tour} />
       <Gallery {...tour} />
       <Location {...tour} />
+      <Review {...tour} />
+      <BookTour {...tour} />
     </>
   );
 };
