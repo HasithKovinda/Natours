@@ -1,44 +1,38 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { AboutTD } from "../components/TourDetails/AboutTD";
 import Hero from "../components/TourDetails/Hero";
-// import { getSingleTour } from "../features/tour/tourSlice";
-// import { useDispatch, useSelector } from "react-redux";
+import { getSingleTour } from "../features/tour/tourSlice";
+import { useDispatch, useSelector } from "react-redux";
 import { Gallery } from "../components/TourDetails/Gallery";
-import customFetch from "../utils/axios";
+import About from "../components/TourDetails/About";
+import { Location } from "../components/TourDetails/Location";
+import Review from "../components/TourDetails/Review";
+import BookTour from "../components/TourDetails/BookTour";
 
 const Tour = () => {
   const { tourId } = useParams();
-  const [isLoading, setLoading] = useState(false);
-  const [tour, setTOurs] = useState({});
 
-  // const dispatch = useDispatch();
-  // const { isLoading, tour } = useSelector((store) => store.tour);
+  const { isLoading, tour } = useSelector((store) => store.tour);
+  const dispatch = useDispatch();
 
-  const getTour = async () => {
-    console.log("fsdfdsf");
-    setLoading(true);
-    const res = await customFetch.get(`/tours/${tourId}`);
-    setLoading(false);
-    console.log(res.data.data.data);
-    setTOurs(res.data.data.data);
-  };
+  useEffect(() => {
+    dispatch(getSingleTour(tourId));
+  }, [tourId, dispatch]);
 
-  useLayoutEffect(() => {
-    getTour();
-  }, []);
+  /* -------------------------------------------------------------------------- */
+  /*             useLayoutEffect hook run before the useEffect hook             */
+  /* -------------------------------------------------------------------------- */
 
-  // useEffect(() => {
-
-  // }, [tourId]);
-
-  if (isLoading) return <h1>Lodging.....</h1>;
+  if (isLoading) return;
 
   return (
     <>
       <Hero {...tour} />
-      {/* <AboutTD {...tour} /> */}
+      <About {...tour} />
       <Gallery {...tour} />
+      <Location {...tour} />
+      <Review {...tour} />
+      <BookTour {...tour} />
     </>
   );
 };

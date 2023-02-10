@@ -1,7 +1,7 @@
 import React from "react";
 import { FiCalendar, FiTrendingUp, FiUsers, FiStar } from "react-icons/fi";
 
-export const AboutTD = ({
+export const About = ({
   startDates,
   difficulty,
   maxGroupSize,
@@ -18,10 +18,13 @@ export const AboutTD = ({
             <FiCalendar className="quick-icon" />
             <p>Next date</p>
             <span>
-              {new Date(startDates[0]).toLocaleDateString("en-us", {
-                year: "numeric",
-                month: "long",
-              }) ?? ""}
+              {new Date(startDates?.map((el) => el)[0]).toLocaleDateString(
+                "en-us",
+                {
+                  year: "numeric",
+                  month: "long",
+                }
+              )}
             </span>
           </div>
           <div className="quick-info">
@@ -42,9 +45,9 @@ export const AboutTD = ({
           <div className="guide-section">
             <h3 className="main-heading">Your tour guides</h3>
           </div>
-          {guides.map((guide) => {
+          {guides?.map((guide, index) => {
             return (
-              <div className="quick-info">
+              <div className="quick-info" key={index}>
                 <img src={guide.photo} alt="img" />
                 <p>
                   {" "}
@@ -59,7 +62,7 @@ export const AboutTD = ({
         </article>
 
         <article className="tour-details-info">
-          <h3 className="main-heading">About the {name}</h3>
+          <h3 className="main-heading">About the {name ?? ""}</h3>
           <div className="tour-extra-info">
             <p>
               Contrary to popular belief, Lorem Ipsum is not simply random text.
@@ -83,4 +86,4 @@ export const AboutTD = ({
     </section>
   );
 };
-export default AboutTD;
+export default About;
