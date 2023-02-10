@@ -5,6 +5,7 @@ import { getSingleTour } from "../features/tour/tourSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { Gallery } from "../components/TourDetails/Gallery";
 import About from "../components/TourDetails/About";
+import { Location } from "../components/TourDetails/Location";
 
 const Tour = () => {
   const { tourId } = useParams();
@@ -27,6 +28,7 @@ const Tour = () => {
       <Hero {...tour} />
       <About {...tour} />
       <Gallery {...tour} />
+      <Location {...tour} />
     </>
   );
 };

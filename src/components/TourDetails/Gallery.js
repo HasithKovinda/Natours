@@ -2,7 +2,7 @@ import React from "react";
 
 export const Gallery = ({ images }) => {
   return (
-    <section className=" nav-center gallery-section gallery">
+    <section className=" gallery-section gallery">
       {images?.map((img, index) => {
         return (
           <article key={index}>

@@ -880,3 +880,13 @@ input[type="file"] {
 .gallery-section {
   display: flex;
 }
+
+/* -------------------------------------------------------------------------- */
+/*                                 Map Section                                */
+/* -------------------------------------------------------------------------- */
+
+.map-section {
+  height: 50vh;
+  transform: skewY(-6deg);
+  margin-bottom: 20rem;
+}
