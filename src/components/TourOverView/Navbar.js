@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "../../images/logo-green-small-2x.png";
 import { navLinks, socialLinks } from "../../data/data";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import AuthLinks from "../Auth/AuthLinks";
+import LogOutLinks from "../Auth/LogOutLinks";
 
 const Navbar = () => {
+  const { user } = useSelector((store) => store.user);
+
   return (
     <nav className="nav">
       <div className="nav-bar nav-center">
@@ -32,18 +37,7 @@ const Navbar = () => {
             );
           })}
         </ul>
-        <ul className="signup-links">
-          <li>
-            <Link to="/login" className="signup-link">
-              Login
-            </Link>
-          </li>
-          <li>
-            <Link to="/signup" className="signup-link">
-              Signup
-            </Link>
-          </li>
-        </ul>
+        {user === null ? <AuthLinks /> : <LogOutLinks />}
       </div>
     </nav>
   );
